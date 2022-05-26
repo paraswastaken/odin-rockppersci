@@ -15,12 +15,12 @@ function playRound(pl, cmp = computerP()) {
     }
     if(pl==='paper'){
         console.log(cmp==='scissors'?`You Lose! ${cmp.toUpperCase()} beats ${pl.toUpperCase()}`:`You Win! ${pl.toUpperCase()} beats ${cmp.toUpperCase()}`);
-        cmp==='paper'?comp++:player++;
+        cmp==='scissors'?comp++:player++;
         return;
     }
     if(pl==='scissors'){
         console.log(cmp==='rock'?`You Lose! ${cmp.toUpperCase()} beats ${pl.toUpperCase()}`:`You Win! ${pl.toUpperCase()} beats ${cmp.toUpperCase()}`);
-        cmp==='paper'?comp++:player++;
+        cmp==='rock'?comp++:player++;
         return;
     }
 }
