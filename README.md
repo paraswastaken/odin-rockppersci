@@ -1,7 +1,7 @@
 # ODIN - ROCK PAPER AND SCISSORS
 ## This is a very basic command Line game of Rock Paper and Scissors
 ### To Play the game ->
-1. Go to this <a href="https://paraswastaken.github.io/odin-rockppersci/" target="_blank">Live Preview</a>.
+1. Go to this [Live Preview](https://paraswastaken.github.io/odin-rockppersci/).
 2. Open the browser console and enter *play()*
 3. The console asks for player input - enter your move with one of these and with exact same spelling(upper or lower case does not matter):
 - rock
