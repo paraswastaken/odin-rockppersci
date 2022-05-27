@@ -8,3 +8,5 @@
 - paper
 - scissors
 4. The game is best of five i.e. player with max score after five rounds wins.
+
+### (This Repository also contains a Markdown Guide for easier referencing)
