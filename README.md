@@ -4,9 +4,9 @@
 1. Go to this [Live Preview](https://paraswastaken.github.io/odin-rockppersci/).
 2. Open the browser console and enter *play()*
 3. The console asks for player input - enter your move with one of these and with exact same spelling(upper or lower case does not matter):
-- rock
-- paper
-- scissors
+        - rock
+        - paper
+        - scissors
 4. The game is best of five i.e. player with max score after five rounds wins.
 
 ### (This Repository also contains a Markdown Guide for easier referencing)
