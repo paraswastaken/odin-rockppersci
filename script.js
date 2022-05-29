@@ -9,11 +9,13 @@ function playRound(e) {
     cmp = computerP();
     cmpsym = document.querySelector('#'+cmp).getAttribute('data-symbol');
     pl = `${e.target.getAttribute('id')}`.toString();
-    console.log(`Player: ${player}      Computer: ${comp}`);
     if(pl===cmp){
         res.textContent = `Draw!! Both Computer and you had ${pl.toUpperCase()}`;
         plmove.textContent = `${e.target.getAttribute('data-symbol')}`;
         compmove.textContent = cmpsym;
+        plscore.textContent = `Player: ${player}`;
+        compscore.textContent = `Computer: ${comp}`;
+
         return;
     }
     if(pl==='rock'){
@@ -21,6 +23,9 @@ function playRound(e) {
         cmp==='paper'?comp++:player++;
         plmove.textContent = `${e.target.getAttribute('data-symbol')}`;
         compmove.textContent = cmpsym;
+        plscore.textContent = `Player: ${player}`;
+        compscore.textContent = `Computer: ${comp}`;
+
         return;
     }
     if(pl==='paper'){
@@ -28,6 +33,9 @@ function playRound(e) {
         cmp==='scissors'?comp++:player++;
         plmove.textContent = `${e.target.getAttribute('data-symbol')}`;
         compmove.textContent = cmpsym;
+        plscore.textContent = `Player: ${player}`;
+        compscore.textContent = `Computer: ${comp}`;
+
         return;
     }
     if(pl==='scissors'){
@@ -35,6 +43,9 @@ function playRound(e) {
         cmp==='rock'?comp++:player++;
         plmove.textContent = `${e.target.getAttribute('data-symbol')}`;
         compmove.textContent = cmpsym;
+        plscore.textContent = `Player: ${player}`;
+        compscore.textContent = `Computer: ${comp}`;
+
         return;
     }
 }
@@ -45,17 +56,27 @@ const scissors = document.querySelector("#scissors");
 const res = document.querySelector('.results');
 const plmove = document.querySelector('.moves>.player');
 const compmove = document.querySelector('.moves>.computer');
+const plscore = document.querySelector('.plsc');
+const compscore = document.querySelector('.compsc');
 
-rock.addEventListener('click', playRound);
-paper.addEventListener('click', playRound);
-scissors.addEventListener('click', playRound);
+function click(e) {
+    if(player===5||comp===5){
+        reset();
+        return;
+    }
+    playRound(e);
+    if(player===5||comp===5){
+        res.textContent = `Final Result: ${player>comp?'You win!!':'You Lose!!'}`;
+    }
+}
 
-// function play() {
-//     let i = 0; comp=0; player=0;
-//     while(comp!==5||player!==5){
-//         playerP = prompt("Enter your move:").toLowerCase();
-//         playRound(playerP);
-//         console.log(`Player: ${player}      Computer: ${comp}`);
-//     }
-//     console.log(`FINAL SCORE:\nPlayer: ${player}      Computer: ${comp}`);
-// }
+function reset(){
+    player = 0; comp = 0;
+    res.textContent = "Make Your first move!!";
+    plscore.textContent = `Player`;
+    compscore.textContent = `Computer`;
+}
+
+rock.addEventListener('click', click);
+paper.addEventListener('click', click);
+scissors.addEventListener('click', click);
