@@ -3,7 +3,12 @@ function computerP() {
     return randomNum>0.67?'rock':randomNum>0.33?'paper':'scissors';
 }
 
-function playRound(pl, cmp = computerP()) {
+let comp =0; player=0;
+
+function playRound(e) {
+    cmp = computerP();
+    pl = `${e.target.getAttribute('class')}`.toString();
+    console.log(`Player: ${player}      Computer: ${comp}`);
     if(pl===cmp){
         console.log(`Draw!! Both Computer and you had ${pl.toUpperCase()}`);
         return;
@@ -25,12 +30,20 @@ function playRound(pl, cmp = computerP()) {
     }
 }
 
-function play() {
-    let i = 0; comp=0; player=0;
-    for(i;i<5;i++){
-        playerP = prompt("Enter your move:").toLowerCase();
-        playRound(playerP);
-        console.log(`Player: ${player}      Computer: ${comp}`);
-    }
-    console.log(`FINAL SCORE:\nPlayer: ${player}      Computer: ${comp}`);
-}
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+rock.addEventListener('click', playRound);
+paper.addEventListener('click', playRound);
+scissors.addEventListener('click', playRound);
+
+// function play() {
+//     let i = 0; comp=0; player=0;
+//     while(comp!==5||player!==5){
+//         playerP = prompt("Enter your move:").toLowerCase();
+//         playRound(playerP);
+//         console.log(`Player: ${player}      Computer: ${comp}`);
+//     }
+//     console.log(`FINAL SCORE:\nPlayer: ${player}      Computer: ${comp}`);
+// }
