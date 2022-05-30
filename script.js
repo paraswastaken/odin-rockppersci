@@ -5,6 +5,16 @@ function computerP() {
     return randomNum>0.67?'rock':randomNum>0.33?'paper':'scissors';
 }
 
+// Functions for generating symbols for winner and loser
+function winSym() {
+    randomNum = Math.random()
+    return randomNum>0.75?'👑':randomNum>0.50?'👌':randomNum>0.25?'👏':'💪';
+}
+function loseSym() {
+    randomNum = Math.random()
+    return randomNum>0.75?'🗿':randomNum>0.50?'😔':randomNum>0.25?'😵':'😿';
+}
+
 // Score counter Variables
 let comp = 0; player = 0;
 
@@ -64,6 +74,10 @@ function click(e) {
     playRound(e);
     if(player===5||comp===5){
         res.textContent = `Final Result: ${player>comp?'You win!!':'You Lose!!'}`;
+        plmove.textContent = `${player>comp?winSym():loseSym()}`;
+        compmove.textContent = `${player<comp?winSym():loseSym()}`;
+        plscore.textContent = `${player>comp?'WINNER!'+'('+player+')':'Better Luck next time'+'('+player+')'}`;
+        compscore.textContent = `${player<comp?'WINNER!'+'('+comp+')':'Better Luck next time'+'('+comp+')'}`;
     }
 }
 
@@ -88,6 +102,8 @@ function reset(){
     res.textContent = "Make Your first move!!";
     plscore.textContent = `Player`;
     compscore.textContent = `Computer`;
+    plmove.textContent = `😇`;
+    compmove.textContent = '🤖';
 }
 
 // Event listener on all three buttons with *click* as callback function
