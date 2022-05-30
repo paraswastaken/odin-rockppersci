@@ -1,17 +1,17 @@
 // Function to randomly generate a string which is then used as computers move...
 //... in *playround()* function.
 function computerP() {
-    randomNum = Math.random()
+    let randomNum = Math.random()
     return randomNum>0.67?'rock':randomNum>0.33?'paper':'scissors';
 }
 
 // Functions for generating symbols for winner and loser
 function winSym() {
-    randomNum = Math.random()
+    let randomNum = Math.random()
     return randomNum>0.75?'👑':randomNum>0.50?'👌':randomNum>0.25?'👏':'💪';
 }
 function loseSym() {
-    randomNum = Math.random()
+    let randomNum = Math.random()
     return randomNum>0.75?'🗿':randomNum>0.50?'😔':randomNum>0.25?'😵':'😿';
 }
 
@@ -21,9 +21,9 @@ let comp = 0; player = 0;
 // Function to play a single round. It is called in the *click()* function...
 //...Argument passed is click data which is then used to reference target button.
 function playRound(e) {
-    cmp = computerP();   // 
-    cmpsym = document.querySelector('#'+cmp).getAttribute('data-symbol');
-    pl = `${e.target.getAttribute('id')}`.toString();
+    let cmp = computerP();   // 
+    let cmpsym = document.querySelector('#'+cmp).getAttribute('data-symbol');
+    let pl = `${e.target.getAttribute('id')}`.toString();
     if(pl===cmp){
         res.textContent = `Draw!! Both Computer and you had ${pl.toUpperCase()}`;
         plmove.textContent = `${e.target.getAttribute('data-symbol')}`;
