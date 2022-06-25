@@ -1,5 +1,5 @@
 # ODIN - ROCK PAPER AND SCISSORS
-## This is a very basic command Line game of Rock Paper and Scissors
+## This is a very basic command line game of Rock Paper and Scissors turned into a small web-app
 ### To Play the game ->
 1. Go to this [Live Preview](https://paraswastaken.github.io/odin-rockppersci/).
 2. Click any button to play that move as your first move.
